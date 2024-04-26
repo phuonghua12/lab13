@@ -4,7 +4,7 @@ public class TreeException extends FamilyTree
 	{
 
 		// Pass s into a superclass ctor.
-
+		super(s);
 	}
 
 }
