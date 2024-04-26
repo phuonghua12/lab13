@@ -52,6 +52,7 @@ public class FamilyTree
 				TreeNode result = child.getNodeWithName(targetName);
 				if (result != null) {
 					return result;
+				}
             }
             
             // Not found anywhere.
@@ -62,17 +63,15 @@ public class FamilyTree
 		// Returns a list of ancestors of this TreeNode, starting with this node’s parent and
         // ending with the root. Order is from recent to ancient.
 
-			ArrayList<TreeNode> collectAncestorsToList() {
+		ArrayList<TreeNode> collectAncestorsToList() {
 			ArrayList<TreeNode> ancestors = new ArrayList<>();
 
 			// Start from the parent of this node
-			TreeNode current = parent;
+			TreeNode current = this;
 
 			// Traverse up the tree until reaching the root
-			while (current != null) {
-				// Add the current ancestor to the list
-				ancestors.add(current);
-				// Move to the parent of the current ancestor
+			while (current.parent != null) {
+				ancestors.add(current.parent);
 				current = current.parent;
 			}
 
