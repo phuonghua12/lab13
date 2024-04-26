@@ -1,4 +1,4 @@
-public class TreeException extends FamilyTree
+public class TreeException extends RuntimeException
 {
 	public TreeException(String s)
 	{

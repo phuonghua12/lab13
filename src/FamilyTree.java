@@ -61,20 +61,28 @@ public class FamilyTree
 
 		// Returns a list of ancestors of this TreeNode, starting with this node’s parent and
         // ending with the root. Order is from recent to ancient.
-        ArrayList<TreeNode> collectAncestorsToList()
-        {
-            ArrayList<TreeNode> ancestors = new ArrayList<>();
 
-            // ?????  Collect ancestors of this TreeNode into the array list. HINT: going up
-            // the nodes of a tree is like traversing a linked list. If that isn’t clear,
-            // draw a tree, mark any leaf node, and then mark its ancestors in order from
-            // recent to ancient. Expect a question about this on the final exam.
+			ArrayList<TreeNode> collectAncestorsToList() {
+			ArrayList<TreeNode> ancestors = new ArrayList<>();
 
-            return ancestors;
-        }
-        
-        
-        public String toString()
+			// Start from the parent of this node
+			TreeNode current = parent;
+
+			// Traverse up the tree until reaching the root
+			while (current != null) {
+				// Add the current ancestor to the list
+				ancestors.add(current);
+				// Move to the parent of the current ancestor
+				current = current.parent;
+			}
+
+			// Return the list of ancestors
+			return ancestors;
+		}
+
+
+
+			public String toString()
         {
             return toStringWithIndent("");
         }
